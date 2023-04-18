@@ -20,7 +20,7 @@ export function InfoSlider({ images, info }) {
         <>
             <section>
                 <div
-                    className="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 "
+                    className="mx-auto max-w-[1340px] text-gray-700 px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 "
                 >
                     <div
                         className="grid grid-cols-1 gap-y-8  sm:grid-cols-2 sm:items-center lg:grid-cols-3 lg:items-center lg:gap-x-16"

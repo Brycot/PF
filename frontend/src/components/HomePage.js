@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <>
       <Banner />
-      <h1 className='text-3xl font-bold underline'>Bienvenidos</h1>
+      <h1 className='text-3xl font-bold underline text-gray-800'>Bienvenidos</h1>
     </>
   );
 }

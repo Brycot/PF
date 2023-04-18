@@ -10,7 +10,7 @@ export default function NavLink({
         <>
             <li className="px-1 relative group">
                 <Link
-                    className={`font-bold text-lg before:transition-all before:duration-300 rounded-md before:content-[''] before:w-full before:scale-x-0 before:h-1 before:rounded-lg before:bg-blue-600 before:absolute before:top-full hover:before:scale-x-100 before:origin-bottom-left ${color}`}
+                    className={`font-bold text-gray-700 text-lg before:transition-all before:duration-300 rounded-md before:content-[''] before:w-full before:scale-x-0 before:h-1 before:rounded-lg before:bg-blue-600 before:absolute before:top-full hover:before:scale-x-100 before:origin-bottom-left ${color}`}
                     href={link}
                 >
                     {text}
@@ -20,7 +20,7 @@ export default function NavLink({
                         {sonLinks.map(({ text, linkSon }) => (
                             <li className="px-1 relative before:transition-all before:duration-300 rounded-md before:content-[''] before:w-full before:scale-x-0 before:h-1 before:rounded-lg before:bg-blue-600 before:absolute before:top-full hover:before:scale-x-100 before:origin-bottom-left">
                                 <Link
-                                    className={`font-bold text-lg ${color}`}
+                                    className={`font-bold text-gray-700 text-lg ${color}`}
                                     href={linkSon}
                                 >
                                     {text}
