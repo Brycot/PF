@@ -67,7 +67,7 @@ export default function Contact() {
               onChange={handleChange}
             />
             <input
-              type="text"
+              type="email"
               className="bg-[#191c5e92] p-2"
               placeholder="Email"
               name='email'
@@ -90,6 +90,7 @@ export default function Contact() {
             <button className=" border-solid border-2 border-blue-700 py-3 px-10 text-white">
               Enviar
             </button>
+            <input type="hidden" name="_autoresponse" value="El mensaje ha sido enviado exitosamente"></input>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="http://localhost:3000/contacto/sent"></input>
             <input type="hidden" name="_subject" value={`Nuevo mensaje de ${message.Nombre}: ${message.Asunto}`} ></input>
