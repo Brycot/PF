@@ -42,7 +42,7 @@ export function HomePage() {
   return (
     <div className="">
       <Banner />
-      <div className="contenido w-full pt-80 sm:pt-32 md:pt-40 lg:pt-20 text-center bg-gradient-to-b from-[#397797] to-blue-950">
+      <div className="w-full pt-80 sm:pt-32 md:pt-40 lg:pt-20 text-center bg-gradient-to-b from-[#397797] to-blue-950">
         <div className="lg:max-w-5xl m-auto">
           <section className="my-10">
             <article className="mb-7">
