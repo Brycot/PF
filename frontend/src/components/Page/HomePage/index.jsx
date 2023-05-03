@@ -50,7 +50,7 @@ export function HomePage() {
                 Algunas de Nuestras Disciplinas
               </h2>
               <article className="flex flex-wrap justify-center gap-1 mt-2">
-                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg hover:scale-105 transition ease-in-out">
                   <Link href='/deportes/futbol-infantil'>
                     <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
                       <p className="sm:text-3xl text-white font-normal tracking-wide">Fútbol infantil</p>
@@ -62,7 +62,7 @@ export function HomePage() {
                   </Link>
                 </div>
 
-                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg hover:scale-105 transition ease-in-out">
                   <Link href='/deportes/futsal-femenino'>
                     <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
                       <p className="sm:text-3xl text-white font-normal">
@@ -76,7 +76,7 @@ export function HomePage() {
                   </Link>
                 </div>
 
-                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg hover:scale-105 transition ease-in-out">
                   <Link href='/deportes/taekwondo'>
                     <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
                       <p className="sm:text-3xl text-white font-normal">Taekwondo</p>
