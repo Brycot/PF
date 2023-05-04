@@ -6,11 +6,11 @@ import { useState } from 'react';
 export default function Testimonials({ testimonials }) {
   // paginado
   const [testimonialsLocal, setTestiminialsLocal] = useState(
-    testimonials.reverse()
+    testimonials
   );
 
   const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
-    testimonialsLocal,
+    testimonialsLocal.reverse(),
     3
   );
 

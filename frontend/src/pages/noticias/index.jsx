@@ -7,15 +7,12 @@ import { useFilter } from '@/components/Page';
 export default function Posts({ posts }) {
   const [filteredItems, setFilter] = useFilter(posts);
   const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
-    filteredItems,
+    filteredItems.reverse(),
     4
   );
 
-  const mainNews = useMemo(
-    () => currentItems[currentItems.length - 1],
-    [currentItems]
-  );
-  const otherNews = useMemo(() => currentItems.slice(0, -1), [currentItems]);
+  const mainNews = currentItems[0];
+  const otherNews = currentItems.slice(1);
 
   return (
     <>
