@@ -5,7 +5,7 @@ const {
 } = require('../../helpers/testimonials/getTestimonials.js');
 
 const getTestimonials = async (req, res) => {
-  console.log(req.headers.cookie)
+  console.log(req.headers.cookie, "esoy en testimonio")
   const { title } = req.query;
   try {
     const testimonials = title
