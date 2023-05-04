@@ -97,7 +97,7 @@ export default function MatchesFormEdit({ setEditModalMatch, row }) {
           <div>
             <label
               htmlFor="discipline"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium text-lg text-left"
             >
               Disciplina:
             </label>
@@ -105,7 +105,7 @@ export default function MatchesFormEdit({ setEditModalMatch, row }) {
               type="text"
               id="discipline"
               name="discipline"
-              className="block w-full p-3 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-3 rounded-lg dark:bg-[#1F2123] dark:border-none bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500  outline-none
                 focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={discipline}
               // onChange={"onInputChange"}
@@ -133,13 +133,13 @@ export default function MatchesFormEdit({ setEditModalMatch, row }) {
 
           <label
             htmlFor="date"
-            className="block mb-2 font-medium text-gray-900 text-lg text-left"
+            className="block mb-2 font-medium  text-lg text-left"
           >
             Fecha del evento:
           </label>
 
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+            className="appearance-none block w-full bg-gray-200 dark:bg-[#1F2123] dark:border-none border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
             id="date"
             name="date"
             type="date"
@@ -149,13 +149,13 @@ export default function MatchesFormEdit({ setEditModalMatch, row }) {
 
           <label
             htmlFor="time"
-            className="block mb-2 font-medium text-gray-900 text-lg text-left"
+            className="block mb-2 font-medium text-lg text-left"
           >
             Hora del evento:
           </label>
 
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+            className="appearance-none block w-full bg-gray-200 dark:bg-[#1F2123] dark:border-none border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
             type="time"
             id="time"
             name="time"
