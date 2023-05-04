@@ -4,20 +4,12 @@ import insta from '../../../../public/contact-img/insta.svg';
 import face from '../../../../public/contact-img/face.svg';
 import twitter from '../../../../public/contact-img/twitter.svg';
 import Image from 'next/image';
-import { useMatches, useDates } from '@/hooks';
-import useStore from '@/store/globalstore';
-import { useState, useEffect } from 'react';
+import { useDates } from '@/hooks';
 
 export default function Chess({data}) {
 
   const { nextDates } = useDates();
   const showMatches = nextDates(data.filter(m=>m.discipline==='Ajedrez'),1)
-
-  // const { matches } = useStore();
-  // const { getMatches } = useMatches();
-  // useEffect(()=>{
-  //   getMatches();
-  // }, [])
 
   return (
     <Layout
@@ -27,7 +19,7 @@ export default function Chess({data}) {
       <div className="m-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center">
           <img
-            src="https://wallpaperaccess.com/full/8357317.jpg"
+            src="/sports-img/Ajedrez2.jpeg"
             alt="imagen de ajedrez"
             loading="lazy"
             className="w-full"
@@ -66,14 +58,14 @@ export default function Chess({data}) {
           </div>
 
           <img
-            src="https://img.freepik.com/fotos-premium/juego-ajedrez-humo-rojo-azul-detras_582637-2313.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
-            alt="imagen de rey"
+            src="/sports-img/Ajedrez1.jpeg"
+            alt="imagen de ajedrez"
             loading="lazy"
             className="w-full"
           />
 
           <img
-            src="https://img.freepik.com/vector-premium/rey-ajedrez-blanco-azul-conviertase-lider-concepto-negocio-deporte-aislado-ilustracion-vector-fondo-azul_587448-921.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph"
+            src="/sports-img/Ajedrez4.jpeg"
             alt="imagen de rey"
             loading="lazy"
             className="w-full"
@@ -99,7 +91,7 @@ export default function Chess({data}) {
           </div>
 
           <img
-            src="https://img.freepik.com/fotos-premium/ajedrez-juego-mesa-figuras-color-dorado-sobre-fondo-azul-cerca_114354-1954.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
+            src="/sports-img/Ajedrez3.jpeg"
             alt="imagen de ajedrez"
             loading="lazy"
             className="w-full"
