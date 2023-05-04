@@ -5,7 +5,9 @@ export function useMerchandising() {
   const { setShowMessageModal } = useContext(AppContext);
   const [products, setProducts] = useState();
   const getProducts = async () => {
-    const {data} = await axios.get('/products');
+
+    const { data } = await axios.get('/products');
+
     return setProducts(data);
   };
   const handlerDelete = async (id) => {

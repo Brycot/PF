@@ -3,15 +3,21 @@ import { NavLink } from '../NavLink';
 import { routes } from './routes';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { setCookie } from 'cookies-next';
 
 export const Navbar = ({ openNavbar }) => {
   const router = useRouter();
 
   const logOut = async () => {
     try {
-      await axios.post('http://localhost:3001/api/auth/logout', null, {
+      const response = await axios.post('/auth/logout', null, {
         withCredentials: true,
         credentials: 'include',
+      });
+      setCookie('authToken', response.data.authToken, {
+        secure: true,
+        sameSite: 'none',
+        maxAge: 0,
       });
       router.push('/');
     } catch (error) {
