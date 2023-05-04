@@ -1,48 +1,36 @@
 import { Layout } from '@/components/Page';
 import { MatchesInfo } from '@/components/Page/MatchesInfo';
-import { useMatches, useDates } from '@/hooks';
-import useStore from '@/store/globalstore';
-import { useState, useEffect } from 'react';
+import { useDates } from '@/hooks';
 
 export default function FutInF({ data }) {
   const { nextDates } = useDates();
   const showMatches = nextDates(data.filter(m=>m.discipline==='Fútbol Infantil'),1)
-
-
-  // const { matches } = useStore();
-  // const { getMatches } = useMatches();
-  // const { nextDates } = useDates();
-  // const showMatches = nextDates(matches.filter(m=>m.discipline==='Fútbol Infantil'),1)
-
-  // useEffect(()=>{
-  //   getMatches();
-  // }, [])
 
   return (
     <Layout
       title="Baby Futbol"
       image="https://img.freepik.com/vector-gratis/balon-futbol-pictograma-red_1284-11698.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
     >
-      <div className="m-4">
-        <div className="grid grid-cols-1 grid-rows-9 md:grid-cols-2 place-items-center">
+      <section className="my-4">
+        <div className="grid grid-cols-1 grid-rows-12 md:grid-cols-2 place-items-center">
           <img
-            src="https://img.freepik.com/foto-gratis/ninos-tiro-completo-jugando-al-futbol_23-2149270951.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
+            src="/sports-img/Baby-Futbol1.jpg"
             alt="futbol infantil"
             loading="lazy"
-            className="hidden md:block w-full"
+            className="w-full row-span-1"
           />
 
-          <div className="relative w-full row-span-3">
+          <div className="relative w-full row-span-4">
             <img
-              src="https://img.freepik.com/foto-gratis/nino-tiro-completo-campo-futbol_23-2149270952.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
+              src="/sports-img/Baby-Futbol3.jpg"
               alt="futbol infantil"
               loading="lazy"
-              className="w-full row-span-3 z-0"
+              className="hidden md:block w-full row-span-4 z-0"
             />
-            <div className="absolute inset-0 md:bg-green-800 md:opacity-50"></div>
+            <div className="absolute inset-0 md:bg-blue-800 md:opacity-50"></div>
           </div>
 
-          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
+          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-5 m-3 row-span-1">
             Desde hace más de 40 años, nuestro club compite en baby fútbol,
             primero en la liga argentina y luego en <strong>FAFI</strong> y
             actualmente en <strong> FEFI</strong>. Este deporte es una actividad
@@ -52,25 +40,15 @@ export default function FutInF({ data }) {
 
           <div className="relative w-full hidden md:block ">
             <img
-              src="https://img.freepik.com/foto-gratis/nino-tiro-completo-entrenando-pelota_23-2149270945.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
+              src="/sports-img/Baby-Futbol2.jpg"
               alt="futbol infantil"
               loading="lazy"
-              className="hidden md:block w-full  z-0"
+              className="hidden md:block w-full row-span-1 z-0"
             />
-            <div className="absolute inset-0 md:bg-green-800 md:opacity-50"></div>
+            <div className="absolute inset-0 md:bg-blue-800 md:opacity-50"></div>
           </div>
 
-          <div className="relative row-span-3 w-full">
-            <img
-              src="https://img.freepik.com/foto-gratis/nino-tiro-completo-campo-futbol_23-2149270917.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=ais"
-              alt="futbol infantil"
-              loading="lazy"
-              className="w-full row-span-3 z-0"
-            />
-            <div className="absolute inset-0 md:bg-green-800 md:opacity-50"></div>
-          </div>
-
-          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
+          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 row-span-1 p-5 m-3">
             Este deporte se realiza con chicos {''}
             <strong>desde los 6 hasta los 13 años</strong>, quienes encuentran
             en él un espacio sano para recrearse y comenzar a practicar deporte,
@@ -78,14 +56,17 @@ export default function FutInF({ data }) {
             misma edad.
           </p>
 
-          <img
-            src="https://img.freepik.com/foto-gratis/entrenamiento-futbol-infantil-tiro-completo_23-2149270943.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
-            alt="futbol infantil"
-            loading="lazy"
-            className="w-full"
-          />
+          <div className="relative row-span-1 w-full">
+            <img
+              src="/sports-img/Baby-Futbol4.jpg"
+              alt="futbol infantil"
+              loading="lazy"
+              className="w-full row-span-1 z-0"
+            />
+            <div className="absolute inset-0 md:bg-blue-800 md:opacity-50"></div>
+          </div>
 
-          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
+          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 row-span-1 p-5 m-3">
             Las tiras selectivo matutino y color practican los martes y viernes{' '}
             <strong>de 18.00hs a 19.00</strong>
             categorías 2017/2016/2015, {''}
@@ -95,7 +76,7 @@ export default function FutInF({ data }) {
             <em>Diego, Gonzalo, Román, Lucas</em>
           </p>
 
-          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
+          <p className="text-base text-gray-700 dark:text-slate-100 leading-6 row-span-1 p-5 m-3">
             La tira de letra practica los {''}
             <strong>lunes y miércoles de 17.00hs a 18.00hs</strong>
             categorías 2016/2015 {''}
@@ -106,12 +87,13 @@ export default function FutInF({ data }) {
           </p>
 
           <img
-            src="https://img.freepik.com/foto-gratis/nino-tiro-medio-sosteniendo-pelota_23-2149270953.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
+            src="/sports-img/Baby-Futbol1.jpg"
             alt="futbol infantil"
             loading="lazy"
-            className="w-full"
+            className="w-full row-span-1"
           />
         </div>
+
         {
         showMatches.length===0? <div className="flex flex-row items-center justify-center mt-8">
                   <p className="pl-2">No hay próximos encuentros programados para esta disciplina</p>
@@ -119,7 +101,7 @@ export default function FutInF({ data }) {
         <MatchesInfo
           data={showMatches}
           classname={
-            'w-full h-full flex items-center md:bg-green-300 dark:bg-green-800 md:opacity-200'
+            'w-full h-full flex items-center md:bg-green-300 dark:bg-blue-800 md:opacity-200'
           }
           iconOne={ <svg
               width="64px"
@@ -226,7 +208,7 @@ export default function FutInF({ data }) {
               </g>
             </svg>}
         />}
-      </div>
+      </section>
     </Layout>
   );
 }
