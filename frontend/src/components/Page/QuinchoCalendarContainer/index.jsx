@@ -41,7 +41,6 @@ export function QuinchoCalendarContainer({ itsAdmin = false }) {
 
   const firstDayofMonth = new Date(year, month - 1, 1);
   const lastDay = new Date(year, month, 0);
-  const lastdayPreviousMonth = new Date(year, month - 1, 0);
 
   const nextYear = () => {
     setYear(year + 1);
@@ -155,17 +154,12 @@ export function QuinchoCalendarContainer({ itsAdmin = false }) {
             <div
               key={i}
               className="flex items-center justify-center w-full h-full text-sm text-gray-400"
-            >
-              {lastdayPreviousMonth.getDate() - firstDayofMonth.getDay() + i}
-            </div>
+            ></div>
           ))}
           {Array.from({ length: lastDay.getDate() }).map((_, i) => {
             return (
-              <>
-                <div
-                  key={i}
-                  className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate"
-                >
+              <div key={i}>
+                <div className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate">
                   {i + 1}
                   {reservationsDates.map((dateEv, index) => {
                     return (
@@ -185,7 +179,7 @@ export function QuinchoCalendarContainer({ itsAdmin = false }) {
                     );
                   })}
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

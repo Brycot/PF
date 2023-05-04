@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const { connectionDB } = require('../database/mongo');
+require('dotenv').config();
+const { CORS_ORIGIN } = process.env;
 
 class Server {
   constructor() {
@@ -19,6 +21,7 @@ class Server {
     this.productsPath = '/api/products';
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
+    this.usersPath = '/api/users';
     // Connect to Data Base
     this.connectToDB();
     // Middlewares
@@ -36,10 +39,7 @@ class Server {
     this.app.use(
       cors({
         credentials: true,
-        origin: [
-          'http://localhost:3000',
-          'https://club-agronomia-central-henna.vercel.app/',
-        ],
+        origin: CORS_ORIGIN ? CORS_ORIGIN : 'http://localhost:3000',
       })
     );
 
@@ -66,11 +66,12 @@ class Server {
     this.app.use(this.productsPath, require('../routes/products'));
     this.app.use(this.subscriptionsPath, require('../routes/subscriptions'));
     this.app.use(this.testimonialsPath, require('../routes/testimonials'));
+    this.app.use(this.usersPath, require('../routes/users'));
   }
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log(`server runing on port: ${this.port}`);
+      console.log(`server running on port: ${this.port}`);
     });
   }
 }

@@ -18,6 +18,8 @@ export default function Dashboard() {
   const setReservas = useStore((state) => state.setReservas);
   const atletas = useStore((state) => state.atletas);
   const reservas = useStore((state) => state.reservas);
+  const matches = useStore((state) => state.matches);
+  const setMatches = useStore((state) => state.setMatches);
   const Ajedrez = atletas.filter((atleta) => atleta.discipline === 'Ajedrez');
   const futbolInfantil = atletas.filter(
     (atleta) => atleta.discipline === 'Fútbol Infantil'
@@ -43,12 +45,13 @@ export default function Dashboard() {
     if (atletas.length === 0) setAtletas();
     if (reservas.length === 0) setReservas();
     if (directiva.length === 0) setDirectiva();
+    if (matches.length === 0) setMatches();
   }, []);
 
   return (
     <Layout>
       <div
-        className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
+        className="w-full grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5 pb-16
       sm:justify-items-center
       lg:grid-cols-3
       xl:grid-cols-4
@@ -386,7 +389,9 @@ export default function Dashboard() {
 
         <LineChart />
         <InfoItem
-          className=""
+          className="
+            xl:row-start-3 xl:col-start-2
+          "
           icon={
             <svg
               viewBox="0 0 24 24"
@@ -420,7 +425,9 @@ export default function Dashboard() {
           number={reservas.length}
         />
         <InfoItem
-          className=""
+          className="
+          xl:col-start-4 xl:row-start-5
+          "
           icon={
             <svg
               viewBox="0 0 24 24"
