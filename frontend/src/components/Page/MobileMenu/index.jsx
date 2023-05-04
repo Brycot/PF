@@ -9,7 +9,7 @@ export function MobileMenu({ openMenu }) {
 
     return (
         <section
-            className={`z-40 w-full h-screen text-slate-100  top-0 left-0 fixed transition-all bg-blue-900 bg-opacity-90 duration-500 [clip-path:circle(0%_at_100%_0%)] ${
+            className={`z-40 w-full h-screen text-slate-100  top-0 left-0 fixed transition-all dark:bg-black dark:bg-opacity-90 bg-blue-900 bg-opacity-90 duration-500 [clip-path:circle(0%_at_100%_0%)] ${
                 openMenu && '[clip-path:circle(150%_at_100%_0%)]'
             }`}
         >
