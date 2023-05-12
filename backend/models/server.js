@@ -39,7 +39,10 @@ class Server {
     this.app.use(
       cors({
         credentials: true,
-        origin: CORS_ORIGIN ? CORS_ORIGIN : 'http://localhost:3000',
+        origin: [
+          'https://club-agronomia-central-henna.vercel.app/',
+          'http://localhost:3000',
+        ],
       })
     );
 
