@@ -16,7 +16,7 @@ export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
             />
           </svg>
           <p className="text-gray-900">
-            ¿Estás seguro que deseas eliminar esta noticia?
+            ¿Estás seguro que deseas eliminar este Elemento?
             <br />
             Esta acción es irreversible.
           </p>
