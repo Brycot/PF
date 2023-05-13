@@ -2,7 +2,6 @@ const { response, request } = require('express');
 const User = require('../../models/User');
 const bcryptjs = require('bcryptjs');
 const { generateJWT } = require('../../helpers/generateJWT');
-const { serialize } = require('cookie');
 
 const login = async (req = request, res = response) => {
   const { email, password } = req.body;
@@ -31,19 +30,10 @@ const login = async (req = request, res = response) => {
     // Generate the JWT
     const token = await generateJWT(user.id);
     console.log(req);
-    const serialized = serialize('authToken', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      SameSite: 'None',
-      maxAge: 1000 * 60 * 60 * 4,
-      path: '/',
-    });
-
-    // res.cookie(serialized)
 
     return res.status(200).json({
       msg: 'succesfully logged',
-      authToken: token,
+      token,
     });
   } catch (error) {
     return res.status(500).json({
