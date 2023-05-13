@@ -1,7 +1,12 @@
 import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { AuthLayout, GoogleButton, InputForm, MessageModal } from '@/components/Dashboard';
+import {
+  AuthLayout,
+  GoogleButton,
+  InputForm,
+  MessageModal,
+} from '@/components/Dashboard';
 import Link from 'next/link';
 import { setCookie } from 'cookies-next';
 import { getCookie } from 'cookies-next';
@@ -26,7 +31,7 @@ export default function Login() {
       });
 
       if (response.status === 200) {
-        setCookie('authToken', response.data.authToken, {
+        setCookie('authToken', response.data.token, {
           secure: true,
           sameSite: 'none',
           maxAge: 1000 * 60 * 60 * 4,
@@ -36,11 +41,12 @@ export default function Login() {
       }
     } catch (error) {
       setShowMessageModal(
-        <p dangerouslySetInnerHTML={
-          {
-            __html: "🚨Inicio de sesion solo para administradores🚨<br/>Correo o contraseña incorrectos. Por favor, intenta de nuevo❗️"
-          }
-        }></p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html:
+              '🚨Inicio de sesion solo para administradores🚨<br/>Correo o contraseña incorrectos. Por favor, intenta de nuevo❗️',
+          }}
+        ></p>
       );
     }
   };
@@ -151,9 +157,7 @@ export default function Login() {
       </span> */}
       {/* <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] dark:before:bg-[#2d2c2d] dark:text-slate-100 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
       <GoogleButton title="Iniciar sesión con Google" /> */}
-      {showMessageModal && (
-        <MessageModal />
-      )}
+      {showMessageModal && <MessageModal />}
     </AuthLayout>
   );
 }
