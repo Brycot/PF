@@ -1,12 +1,11 @@
 import { Layout, FormNews, FormModifyNews, ButtonEditNews, ButtonDeleteNews, ButtonCreateNews, Loader, MessageModal } from '@/components/Dashboard';
-import { useState, useMemo, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
 import { useNews } from '@/hooks';
 import AppContext from '../../../../contexts/AppContext';
 
 export default function News() {
   const { newsGlobal, showMessageModal } = useContext(AppContext);
-
   const { handlerDelete, handlerCreate, handlerModify, stateGlobalNews, loading, setLoading } = useNews();
 
   useEffect(() => {
@@ -27,9 +26,8 @@ export default function News() {
     setShowModify(false);
   };
 
-  const mainNews = useMemo(() => newsGlobal[newsGlobal.length - 1], [newsGlobal]);
-
-  const otherNews = useMemo(() => newsGlobal.slice(0, -1).reverse(), [newsGlobal]);
+  const mainNews = newsGlobal[newsGlobal.length - 1];
+  const otherNews = newsGlobal.slice(0, newsGlobal.length - 1).reverse();
 
   return (
     <Layout>
