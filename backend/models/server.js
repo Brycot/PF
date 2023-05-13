@@ -40,13 +40,12 @@ class Server {
       cors({
         credentials: true,
         origin: [
-          'https://club-agronomia-central-henna.vercel.app/',
+          'https://club-agronomia-central-henna.vercel.app',
           'http://localhost:3000',
         ],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })
     );
-
     // Lectura y parseo del body
     this.app.use(express.json({ limit: '1024mb' }));
 
