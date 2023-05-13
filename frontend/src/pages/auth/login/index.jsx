@@ -31,6 +31,7 @@ export default function Login() {
       });
 
       if (response.status === 200) {
+        console.log(response.data);
         setCookie('authToken', response.data.token, {
           secure: true,
           sameSite: 'none',
