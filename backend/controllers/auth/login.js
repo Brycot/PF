@@ -31,7 +31,6 @@ const login = async (req = request, res = response) => {
     const token = await generateJWT(user.id);
 
     return res.status(200).json({
-      msg: 'succesfully logged',
       token,
     });
   } catch (error) {
