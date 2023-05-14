@@ -23,19 +23,30 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post('/auth/login', credentials, {
-      withCredentials: true,
-      credentials: 'include',
-      redirect: 'follow',
-    });
-
-    if (response.status === 200) {
-      setCookie('authToken', response.data.token, {
-        secure: true,
-        sameSite: 'none',
-        maxAge: 1000 * 60 * 60 * 4,
+    try {
+      const response = await axios.post('/auth/login', credentials, {
+        withCredentials: true,
+        credentials: 'include',
+        redirect: 'follow',
       });
-      router.push('/dashboard');
+
+      if (response.status === 200) {
+        setCookie('authToken', response.data.token, {
+          secure: true,
+          sameSite: 'none',
+          maxAge: 1000 * 60 * 60 * 4,
+        });
+        router.push('/dashboard');
+      }
+    } catch (error) {
+      setShowMessageModal(
+        <p
+          dangerouslySetInnerHTML={{
+            __html:
+              '🚨Inicio de sesion solo para administradores🚨<br/>Correo o contraseña incorrectos. Por favor, intenta de nuevo❗️',
+          }}
+        ></p>
+      );
     }
   };
 
