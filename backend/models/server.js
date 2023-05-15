@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { connectionDB } = require('../database/mongo');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const { CORS_ORIGIN } = process.env;
 
@@ -35,13 +36,21 @@ class Server {
   }
 
   middlewares() {
+    this.app.use(cookieParser());
     // CORS
     this.app.use(
       cors({
+        allowedHeaders: [
+          'Origin',
+          'X-Requested-With',
+          'Content-Type',
+          'Accept',
+        ],
         credentials: true,
         origin: [
           'https://club-agronomia-central-henna.vercel.app',
           'http://localhost:3000',
+          'https://club-agronomia-central.vercel.app',
         ],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })
