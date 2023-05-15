@@ -9,7 +9,6 @@ import {
 } from '@/components/Dashboard';
 import Link from 'next/link';
 import { setCookie } from 'cookies-next';
-import { getCookie } from 'cookies-next';
 import AppContext from '../../../../contexts/AppContext';
 
 export default function Login() {
