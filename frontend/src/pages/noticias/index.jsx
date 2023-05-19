@@ -6,8 +6,9 @@ import { useFilter } from '@/components/Page';
 
 export default function Posts({ posts }) {
   const [filteredItems, setFilter] = useFilter(posts);
+  const ordenar = (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
-    filteredItems.reverse(),
+    filteredItems.sort(ordenar),
     4
   );
 
