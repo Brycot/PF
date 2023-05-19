@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Testimonials({ testimonials }) {
+  const ordenar = (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   // paginado
   const [testimonialsLocal, setTestiminialsLocal] = useState(
     testimonials
   );
 
   const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
-    testimonialsLocal.reverse(),
+    testimonialsLocal.sort(ordenar),
     3
   );
 
