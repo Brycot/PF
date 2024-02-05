@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Navbar, Footer, HeaderTitle } from '..';
 import { ClubIconSVG as ClubIconSVG } from '..';
-import { WhatsAppWidget } from 'react-whatsapp-widget';
+// import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
 import { useRouter } from 'next/router';
 
@@ -29,7 +29,7 @@ export function Layout({ children, image, title }) {
         >
           {children}
         </div>
-        <div className='dark:text-black z-50 absolute'>
+{/*         <div className='dark:text-black z-50 absolute'>
         <WhatsAppWidget
           CompanyIcon={ClubIconSVG}
           phoneNumber="584149056161"
@@ -39,7 +39,7 @@ export function Layout({ children, image, title }) {
           sendButtonText="Enviar"
           inputPlaceHolder="Escribí tu mensaje"
         />
-        </div>
+        </div> */}
       </main>
       <Footer />
     </>
